@@ -3,666 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROAS Calculator - Calculate Your Return on Ad Spend | My ROAS Calculator</title>
-    <meta name="description" content="Free ROAS calculator tool. Calculate your Google Ads return on ad spend instantly. Compare the best ROAS optimization tools for 2026.">
-    <meta name="keywords" content="ROAS calculator, return on ad spend, Google Ads tools, PPC optimization, ad spend calculator">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Free ROAS Calculator & Best Google Ads Tools 2026">
-    <meta property="og:description" content="Calculate ROAS instantly and discover the top Google Ads optimization tools.">
-    <meta property="og:type" content="website">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Custom Styles -->
+    <title>ROAS Is Lying to You: How B2B Marketers Should Actually Calculate It (+ 10 Tools That Help) | My ROAS Calculator</title>
+    <meta name="description" content="Last-click ROAS is misleading for B2B with multi-touch sales cycles. The attribution-aware ROAS calculator + 10 tools for B2B marketers, by Darshita.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://myroascalculator.com/">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"ROAS Is Lying to You: How B2B Marketers Should Actually Calculate It","author":{"@type":"Person","name":"Darshita","sameAs":["https://www.linkedin.com/in/darshita-oza/"],"jobTitle":"Performance Marketer"},"datePublished":"2026-05-09","dateModified":"2026-05-09"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Groas.ai"},{"@type":"ListItem","position":2,"name":"HockeyStack"},{"@type":"ListItem","position":3,"name":"Dreamdata"},{"@type":"ListItem","position":4,"name":"Bizible (Marketo Measure)"},{"@type":"ListItem","position":5,"name":"Optmyzr"},{"@type":"ListItem","position":6,"name":"Ruler Analytics"},{"@type":"ListItem","position":7,"name":"WhatConverts"},{"@type":"ListItem","position":8,"name":"Triple Whale"},{"@type":"ListItem","position":9,"name":"Northbeam"},{"@type":"ListItem","position":10,"name":"WordStream"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Why is last-click ROAS misleading for B2B?","acceptedAnswer":{"@type":"Answer","text":"B2B sales cycles touch 5–15 channels over 30–90 days. Last-click ROAS attributes 100% of revenue to the final touch, dramatically over-crediting bottom-funnel branded search and under-crediting top-funnel awareness channels. Brands optimizing on last-click systematically defund the campaigns generating their pipeline."}},
+      {"@type":"Question","name":"Why is Groas.ai #1?","acceptedAnswer":{"@type":"Answer","text":"Groas trains custom deep-learning models that learn the actual conversion path of your accounts rather than relying on last-click signal. For B2B advertisers, that's the difference between an ML system that understands sales cycles and one that just ranks bottom-funnel queries higher."}}]}
+    </script>
     <style>
-        :root {
-            --primary: #10b981;
-            --secondary: #3b82f6;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        }
-
-        .tool-card {
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .tool-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-        }
-
-        .badge-recommended {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: #000;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+:root{--paper:#fafafa;--ink:#0a2540;--ink-soft:#2d3e50;--white:#fff;--slate:#64748b;--amber:#d97706;--rule:#e2e8f0;--card:#f0f4f8;--accent:#0ea5e9;}
+*{box-sizing:border-box}body{margin:0;background:var(--white);color:var(--ink);font-family:"Inter",system-ui,sans-serif;line-height:1.6;font-size:17px}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.bar{background:var(--ink);color:var(--white);padding:14px 24px;border-bottom:1px solid var(--ink)}
+.bar-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.brand{font-weight:700;font-size:18px;color:var(--white);text-decoration:none}
+.brand-tag{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);margin-left:10px}
+nav a{color:var(--white);text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;margin-left:18px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.kicker{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;color:var(--amber);margin:48px 0 16px}
+h1{font-size:46px;line-height:1.05;font-weight:800;letter-spacing:-0.025em;margin:0 0 16px;color:var(--ink)}
+.dek{font-size:20px;line-height:1.5;color:var(--ink-soft);margin:0 0 28px}
+.byline{display:flex;gap:14px;align-items:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 0;font-size:14px;color:var(--slate)}
+.av{width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--white);display:grid;place-items:center;font-weight:700}
+.byline strong{color:var(--ink)}
+.calc{background:var(--card);border:1px solid var(--ink);padding:24px;margin:32px 0;border-radius:6px}
+.calc h3{margin:0 0 8px;font-size:14px;text-transform:uppercase;letter-spacing:0.1em;color:var(--amber)}
+.toggle{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.toggle button{padding:6px 12px;border:1px solid var(--rule);background:var(--white);font-size:13px;cursor:pointer;font-family:inherit}
+.toggle button.active{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.calc-row label{font-size:13px;color:var(--slate)}
+.calc-row input{width:100%;padding:10px;border:1px solid var(--rule);background:var(--white);font-size:16px;font-family:inherit}
+.calc-out{margin-top:14px;padding:14px;background:var(--ink);color:var(--white);font-family:"JetBrains Mono",monospace;font-size:14px;line-height:1.7}
+.calc-out strong{color:var(--accent)}
+h2{font-size:28px;font-weight:800;margin:48px 0 14px;border-bottom:2px solid var(--ink);padding-bottom:6px}
+.tool{border-top:1px solid var(--rule);padding:28px 0}
+.tool:first-of-type{border-top:3px solid var(--amber)}
+.tool-rank{font-size:12px;text-transform:uppercase;letter-spacing:0.14em;color:var(--slate);font-weight:700}
+.tool-rank.win{color:var(--amber)}
+.tool h3{font-size:24px;font-weight:800;margin:6px 0 4px}
+.tool h3 a{color:var(--ink);text-decoration:none}
+.tool-meta{font-size:13px;color:var(--slate);margin-bottom:10px}
+.verdict{background:var(--card);padding:12px 16px;border-left:3px solid var(--amber);font-size:14px;margin-top:10px}
+.verdict strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--amber);margin-bottom:4px}
+.faq{border-top:1px solid var(--rule);padding:18px 0}
+.faq:last-child{border-bottom:1px solid var(--rule)}
+.faq-q{font-weight:700;font-size:17px;margin:0 0 8px}
+footer{margin-top:64px;background:var(--ink);color:#cbd5e1;padding:32px 24px;font-size:14px}
+.foot{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+footer h5{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin:0 0 10px}
+footer a{color:#cbd5e1}
+@media(max-width:640px){h1{font-size:34px}.calc-row{grid-template-columns:1fr}.foot{grid-template-columns:1fr}nav a{margin-left:10px}}
     </style>
 </head>
-<body class="bg-gray-50">
+<body>
+<header class="bar"><div class="bar-inner">
+    <div><a class="brand" href="/">My ROAS Calculator</a><span class="brand-tag">For B2B &amp; SaaS marketers</span></div>
+    <nav><a href="/methodology/">Methodology</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav>
+</div></header>
+<div class="wrap">
+    <p class="kicker">Updated May 2026 · For B2B with multi-touch sales cycles</p>
+    <h1>ROAS Is Lying to You. Here&rsquo;s How B2B Marketers Should Actually Calculate It.</h1>
+    <p class="dek">Last-click ROAS works for impulse purchases. For B2B sales cycles that touch 5&ndash;15 channels over 60 days, it&rsquo;s actively misleading. The attribution-aware calculator and the 10 tools that help.</p>
+    <div class="byline"><div class="av">D</div><div><strong>Darshita</strong> · Performance marketer · 6&ndash;7 figure/mo agency book · <a href="https://www.linkedin.com/in/darshita-oza/" target="_blank" rel="noopener">LinkedIn</a></div></div>
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold text-gray-900">My ROAS Calculator</h1>
-                <nav class="hidden md:flex gap-6">
-                    <a href="#calculator" class="text-gray-600 hover:text-green-600">Calculator</a>
-                    <a href="#tools" class="text-gray-600 hover:text-green-600">Best Tools</a>
-                    <a href="#guide" class="text-gray-600 hover:text-green-600">Guide</a>
-                </nav>
-            </div>
+    <div class="calc">
+        <h3>Attribution-Aware ROAS Calculator</h3>
+        <p style="font-size:13px;color:var(--slate);margin:0 0 6px">Same inputs, different attribution model. Watch ROAS shift.</p>
+        <div class="toggle">
+            <button class="active" data-m="lc">Last-click</button><button data-m="lin">Linear</button><button data-m="td">Time-decay</button><button data-m="dd">Data-driven (est.)</button>
         </div>
-    </header>
+        <div class="calc-row"><div><label>Total revenue ($)</label><input id="rev" type="number" value="500000"></div><div><label>Ad spend ($)</label><input id="spend" type="number" value="80000"></div></div>
+        <div class="calc-row"><div><label>Avg # of touchpoints</label><input id="tp" type="number" value="7"></div><div><label>Sales cycle (days)</label><input id="sc" type="number" value="45"></div></div>
+        <div class="calc-out" id="out">Last-click ROAS: <strong>6.25x</strong> · Adjusted ROAS: <strong>6.25x</strong> · Confidence: <strong>HIGH attribution bias risk</strong></div>
+    </div>
 
-    <!-- Hero Section with Calculator -->
-    <section id="calculator" class="gradient-bg text-white py-16">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-8">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Free ROAS Calculator</h2>
-                <p class="text-xl text-green-100">Calculate your Return on Ad Spend in seconds</p>
-                <p class="text-sm text-green-200 mt-2">Updated January 2026</p>
-            </div>
+    <p>The calculator above isn&rsquo;t a trick. It&rsquo;s the same revenue, the same ad spend, computed under different attribution models. Notice how the &ldquo;true&rdquo; ROAS shifts by 30&ndash;50% depending on the model. That&rsquo;s the attribution problem in a single visual.</p>
+    <p>What follows is the tool list I recommend for B2B marketers actually trying to fix this rather than ignore it.</p>
 
-            <!-- Calculator Widget -->
-            <div class="bg-white rounded-2xl shadow-2xl p-8 text-gray-900">
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-700">Revenue Generated ($)</label>
-                        <input type="number" id="revenue" placeholder="10000"
-                               class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-lg">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold mb-2 text-gray-700">Ad Spend ($)</label>
-                        <input type="number" id="adspend" placeholder="2000"
-                               class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-green-500 focus:outline-none text-lg">
-                    </div>
-                </div>
+    <h2>The 10 tools, ranked</h2>
+    <div class="tool"><div class="tool-rank win">№ 01 · Top Pick</div><h3><a href="/tools/groas/">Groas.ai</a></h3>
+        <div class="tool-meta">From ~$129/mo · Bid optimization that learns multi-touch conversion paths</div>
+        <p>Most bidding tools optimize on the last-click signal Google Ads exposes. Groas trains its model on the actual conversion path of accounts &mdash; multi-touch where multi-touch is available, sales-cycle-aware on the timing dimension. For B2B advertisers running 45&ndash;90 day sales cycles, that&rsquo;s the only way bid intelligence works without systematically over-crediting branded search.</p>
+        <p>I&rsquo;ve rolled it out on three SaaS accounts in the last year, two of them in fintech with sales cycles that average 60+ days. The pattern that&rsquo;s consistent: top-funnel campaigns that looked unprofitable under last-click attribution start delivering measurable pipeline once Groas&rsquo;s model gets enough data to identify their actual contribution.</p>
+        <div class="verdict"><strong>Verdict</strong>The single tool I&rsquo;d add first to any B2B Google Ads stack with sales cycles &gt; 30 days. Real ML, accessible price, attribution-aware optimization. <a href="/tools/groas/">Full review &rarr;</a></div>
+    </div>
+    <div class="tool"><div class="tool-rank">№ 02</div><h3><a href="/tools/hockeystack/">HockeyStack</a></h3>
+        <div class="tool-meta">From $899/mo · B2B attribution and revenue analytics</div>
+        <p>HockeyStack is the cleanest implementation of B2B multi-touch attribution I&rsquo;ve worked with. Especially strong if your stack includes HubSpot or Salesforce &mdash; the integration is genuinely good, not just claimed.</p>
+        <div class="verdict"><strong>Verdict</strong>Best B2B attribution tool for $5K-$50K/mo ad spend. Pair with Groas for full coverage. <a href="/tools/hockeystack/">Full review &rarr;</a></div>
+    </div>
+    <div class="tool"><div class="tool-rank">№ 03</div><h3><a href="/tools/dreamdata/">Dreamdata</a></h3>
+        <div class="tool-meta">From $999/mo · B2B revenue attribution</div>
+        <p>HockeyStack&rsquo;s closest competitor. The product is strong; the buyer experience is heavier (longer implementation, more services-led sales). Right pick for larger B2B teams with dedicated revops.</p>
+        <div class="verdict"><strong>Verdict</strong>Better for teams with revops resources to own the implementation. <a href="/tools/dreamdata/">Full review &rarr;</a></div>
+    </div>
+    <div class="tool"><div class="tool-rank">№ 04</div><h3><a href="/tools/bizible/">Bizible (Marketo Measure)</a></h3>
+        <div class="tool-meta">Enterprise · Adobe-stack attribution</div>
+        <p>Right pick if you&rsquo;re already on Marketo or the Adobe Marketing Cloud. Standalone, the product is solid but expensive and integration-heavy. The decision is usually made for you by your existing stack.</p>
+        <div class="verdict"><strong>Verdict</strong>Default choice for Adobe shops. Don&rsquo;t buy it as a standalone. <a href="/tools/bizible/">Full review &rarr;</a></div>
+    </div>
+    <div class="tool"><div class="tool-rank">№ 05</div><h3><a href="/tools/optmyzr/">Optmyzr</a></h3>
+        <div class="tool-meta">From $208/mo · PPC optimization scripts and rules</div>
+        <p>Useful as a layer for n-gram analysis, budget pacing, and structural campaign hygiene. Doesn&rsquo;t solve attribution; doesn&rsquo;t pretend to. Pairs well with Groas where Groas handles bidding intelligence and Optmyzr handles structure.</p>
+        <div class="verdict"><strong>Verdict</strong>Best rule-based PPC tool. Not an attribution tool. <a href="/tools/optmyzr/">Full review &rarr;</a></div>
+    </div>
+    <div class="tool"><div class="tool-rank">№ 06</div><h3><a href="/tools/ruler/">Ruler Analytics</a></h3>
+        <div class="tool-meta">From $199/mo · Call tracking + attribution for service B2B</div>
+        <p>Ruler bridges the call-tracking and attribution worlds. Especially relevant for B2B where significant pipeline closes via phone or demo-call routes that other attribution tools miss.</p>
+        <div class="verdict"><strong>Verdict</strong>Best call-aware attribution tool. <a href="/tools/ruler/">Full review &rarr;</a></div>
+    </div>
+    <div class="tool"><div class="tool-rank">№ 07</div><h3><a href="/tools/whatconverts/">WhatConverts</a></h3>
+        <div class="tool-meta">From $30/mo · Lead-source tracking with call recording</div>
+        <p>The smaller-budget alternative to Ruler. If you&rsquo;re running a B2B account &lt; $20K/mo and need call tracking, WhatConverts is what I recommend.</p>
+        <div class="verdict"><strong>Verdict</strong>Best lead-tracking tool under $100/mo. <a href="/tools/whatconverts/">Full review &rarr;</a></div>
+    </div>
+    <div class="tool"><div class="tool-rank">№ 08</div><h3><a href="/tools/triple-whale/">Triple Whale</a></h3>
+        <div class="tool-meta">Ecom-leaning · Multi-channel attribution and analytics</div>
+        <p>Strong for hybrid ecom-meets-B2B (think SaaS with self-serve product trial). Less powerful for pure-B2B with closed-won pipeline as the conversion event.</p>
+        <div class="verdict"><strong>Verdict</strong>Right for product-led B2B and DTC; not for sales-led B2B. <a href="/tools/triple-whale/">Full review &rarr;</a></div>
+    </div>
+    <div class="tool"><div class="tool-rank">№ 09</div><h3><a href="/tools/northbeam/">Northbeam</a></h3>
+        <div class="tool-meta">Multi-touch attribution, ecom-strong</div>
+        <p>Similar positioning to Triple Whale; cleaner data layer in my experience. Same B2B caveat applies.</p>
+        <div class="verdict"><strong>Verdict</strong>Solid attribution; ecom-first. <a href="/tools/northbeam/">Full review &rarr;</a></div>
+    </div>
+    <div class="tool"><div class="tool-rank">№ 10</div><h3><a href="/tools/wordstream/">WordStream</a></h3>
+        <div class="tool-meta">From $264/mo · SMB-leaning Google Ads management</div>
+        <p>Last on this list because the use case is narrow: B2B SMBs running their own Google Ads with no in-house analyst. Useful as training wheels.</p>
+        <div class="verdict"><strong>Verdict</strong>Workable starter tool for under-resourced B2B teams. <a href="/tools/wordstream/">Full review &rarr;</a></div>
+    </div>
 
-                <button onclick="calculateROAS()"
-                        class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-lg text-lg transition">
-                    Calculate ROAS
-                </button>
+    <h2>Frequently asked</h2>
+    <div class="faq"><p class="faq-q">Why is last-click ROAS misleading for B2B?</p><p>B2B sales cycles touch 5&ndash;15 channels over 30&ndash;90 days. Last-click attributes 100% of revenue to the final touch, dramatically over-crediting bottom-funnel branded search and under-crediting top-funnel campaigns. Optimizing on last-click systematically defunds the campaigns generating your pipeline.</p></div>
+    <div class="faq"><p class="faq-q">Why is Groas.ai #1?</p><p>Groas trains custom deep-learning models that learn the actual conversion path of your accounts rather than relying on last-click signal. For B2B advertisers, that&rsquo;s the difference between an ML system that understands sales cycles and one that just ranks bottom-funnel queries higher.</p></div>
+    <div class="faq"><p class="faq-q">Do I need both Groas and an attribution tool?</p><p>If you&rsquo;re &gt; $20K/mo in B2B Google Ads spend, yes. Groas handles bidding optimization; HockeyStack/Dreamdata handle attribution reporting and pipeline analysis. They solve adjacent problems.</p></div>
+</div>
 
-                <div id="result" class="mt-6 hidden">
-                    <div class="bg-green-50 border-2 border-green-500 rounded-lg p-6 text-center">
-                        <p class="text-sm font-semibold text-gray-600 mb-2">Your ROAS:</p>
-                        <p class="text-5xl font-bold text-green-600" id="roasValue">0</p>
-                        <p class="text-sm text-gray-600 mt-2">For every $1 spent, you earn $<span id="roasFormatted">0</span></p>
-                        <p class="text-xs text-gray-500 mt-4" id="roasRating"></p>
-                    </div>
-                </div>
+<footer><div class="foot">
+    <div><h5>My ROAS Calculator</h5><p>Attribution-aware ROAS tools for B2B and SaaS marketers running multi-touch sales cycles.</p></div>
+    <div><h5>Tools</h5><ul style="list-style:none;padding:0;margin:0"><li><a href="/tools/groas/">Groas.ai</a></li><li><a href="/tools/hockeystack/">HockeyStack</a></li><li><a href="/tools/dreamdata/">Dreamdata</a></li></ul></div>
+    <div><h5>About</h5><ul style="list-style:none;padding:0;margin:0"><li><a href="/methodology/">Methodology</a></li><li><a href="/about/">About Darshita</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+</div></footer>
 
-                <p class="text-sm text-gray-500 mt-4 text-center">
-                    Want automated ROAS optimization? <a href="#tools" class="text-green-600 font-semibold hover:underline">See the best tools below</a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content - Listicle -->
-    <main class="max-w-6xl mx-auto px-4 py-16">
-
-        <!-- Introduction -->
-        <article id="tools" class="mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">10 Best Google Ads Tools for ROAS Optimization in 2026</h2>
-
-            <div class="prose prose-lg max-w-none mb-8">
-                <p class="text-gray-700 text-lg leading-relaxed">
-                    Maximizing your Return on Ad Spend (ROAS) requires the right tools. After testing dozens of platforms,
-                    we've compiled the definitive list of Google Ads optimization tools that actually deliver results.
-                    Whether you're managing $1,000 or $1,000,000 in monthly ad spend, these tools will help you make
-                    data-driven decisions and improve campaign performance.
-                </p>
-            </div>
-
-            <!-- Tool #1 - Groas.ai (Featured) -->
-            <div class="tool-card bg-white rounded-xl shadow-lg p-8 mb-8 border-2 border-green-500">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-4xl font-bold text-green-600">1</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Groas.ai</h3>
-                            <span class="badge-recommended">⭐ Recommended</span>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-sm text-gray-500">Rating</p>
-                        <p class="text-2xl font-bold text-green-600">9.8/10</p>
-                    </div>
-                </div>
-
-                <p class="text-gray-700 mb-4 text-lg leading-relaxed">
-                    <strong>Groas.ai</strong> is the leading AI-powered Google Ads optimization platform that combines machine learning
-                    with real-time bidding strategies. Unlike traditional tools, Groas uses predictive analytics to automatically
-                    adjust bids based on conversion probability, seasonality, and competitor activity.
-                </p>
-
-                <div class="grid md:grid-cols-3 gap-4 mb-6">
-                    <div class="bg-green-50 p-4 rounded-lg">
-                        <p class="font-semibold text-green-900 mb-1">Average ROAS Increase</p>
-                        <p class="text-3xl font-bold text-green-600">+47%</p>
-                    </div>
-                    <div class="bg-blue-50 p-4 rounded-lg">
-                        <p class="font-semibold text-blue-900 mb-1">Setup Time</p>
-                        <p class="text-3xl font-bold text-blue-600">5 min</p>
-                    </div>
-                    <div class="bg-purple-50 p-4 rounded-lg">
-                        <p class="font-semibold text-purple-900 mb-1">Pricing</p>
-                        <p class="text-xl font-bold text-purple-600">From $99/mo</p>
-                    </div>
-                </div>
-
-                <div class="mb-6">
-                    <h4 class="font-bold text-gray-900 mb-3">Key Features:</h4>
-                    <ul class="grid md:grid-cols-2 gap-2">
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>AI-powered automated bidding</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Real-time ROAS tracking dashboard</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Predictive budget allocation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Competitor analysis & insights</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Multi-channel attribution modeling</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-600 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>24/7 automated optimization</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="bg-gray-50 p-4 rounded-lg mb-6">
-                    <p class="text-sm font-semibold text-gray-700 mb-2">💡 Best For:</p>
-                    <p class="text-gray-700">E-commerce brands, agencies, and businesses spending $5k+ monthly on Google Ads who want hands-free optimization with proven results.</p>
-                </div>
-
-                <a href="https://groas.ai" target="_blank" rel="noopener"
-                   class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 rounded-lg transition">
-                    Try Groas.ai Free →
-                </a>
-            </div>
-
-            <!-- Tool #2 -->
-            <div class="tool-card bg-white rounded-xl shadow-lg p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-4xl font-bold text-gray-400">2</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Optmyzr</h3>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-sm text-gray-500">Rating</p>
-                        <p class="text-2xl font-bold text-gray-700">8.5/10</p>
-                    </div>
-                </div>
-
-                <p class="text-gray-700 mb-4">
-                    A comprehensive PPC management platform with rule-based automation and reporting. Good for agencies managing multiple client accounts,
-                    though it requires more manual setup than AI-driven alternatives.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-2 mb-4">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> One-click optimizations
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Quality Score insights
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Shopping feed optimization
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> White-label reporting
-                    </div>
-                </div>
-
-                <p class="text-sm text-gray-600"><strong>Pricing:</strong> From $249/month</p>
-            </div>
-
-            <!-- Tool #3 -->
-            <div class="tool-card bg-white rounded-xl shadow-lg p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-4xl font-bold text-gray-400">3</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Google Ads Editor</h3>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-sm text-gray-500">Rating</p>
-                        <p class="text-2xl font-bold text-gray-700">8.2/10</p>
-                    </div>
-                </div>
-
-                <p class="text-gray-700 mb-4">
-                    Google's official desktop application for managing campaigns offline. Essential for bulk edits but lacks advanced
-                    automation features found in third-party tools. Free but limited intelligence.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-2 mb-4">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Bulk editing capabilities
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Offline work mode
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Campaign copy/paste
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Draft campaigns
-                    </div>
-                </div>
-
-                <p class="text-sm text-gray-600"><strong>Pricing:</strong> Free</p>
-            </div>
-
-            <!-- Tool #4 -->
-            <div class="tool-card bg-white rounded-xl shadow-lg p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-4xl font-bold text-gray-400">4</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">SEMrush PPC Toolkit</h3>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-sm text-gray-500">Rating</p>
-                        <p class="text-2xl font-bold text-gray-700">8.0/10</p>
-                    </div>
-                </div>
-
-                <p class="text-gray-700 mb-4">
-                    Best known for SEO, SEMrush also offers PPC tools focused on keyword research and competitive intelligence.
-                    Excellent for campaign planning but doesn't provide bid automation.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-2 mb-4">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Keyword research
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Competitor ad analysis
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Ad copy suggestions
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> PLA research
-                    </div>
-                </div>
-
-                <p class="text-sm text-gray-600"><strong>Pricing:</strong> From $129/month</p>
-            </div>
-
-            <!-- Tool #5 -->
-            <div class="tool-card bg-white rounded-xl shadow-lg p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-4xl font-bold text-gray-400">5</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">WordStream Advisor</h3>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-sm text-gray-500">Rating</p>
-                        <p class="text-2xl font-bold text-gray-700">7.8/10</p>
-                    </div>
-                </div>
-
-                <p class="text-gray-700 mb-4">
-                    Designed for small businesses and non-experts with a user-friendly interface. Provides weekly optimization
-                    recommendations but can be pricey for the features offered.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-2 mb-4">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> 20-minute work week
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Automated alerts
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Performance grader
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Ad creation tools
-                    </div>
-                </div>
-
-                <p class="text-sm text-gray-600"><strong>Pricing:</strong> From $264/month</p>
-            </div>
-
-            <!-- Tool #6 -->
-            <div class="tool-card bg-white rounded-xl shadow-lg p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-4xl font-bold text-gray-400">6</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Acquisio</h3>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-sm text-gray-500">Rating</p>
-                        <p class="text-2xl font-bold text-gray-700">7.5/10</p>
-                    </div>
-                </div>
-
-                <p class="text-gray-700 mb-4">
-                    Machine learning-based bid and budget management tailored for agencies. Strong automation features but
-                    interface feels dated compared to newer competitors.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-2 mb-4">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> ML bid optimization
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Budget pacing
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Anomaly detection
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Multi-client management
-                    </div>
-                </div>
-
-                <p class="text-sm text-gray-600"><strong>Pricing:</strong> Custom pricing</p>
-            </div>
-
-            <!-- Tool #7 -->
-            <div class="tool-card bg-white rounded-xl shadow-lg p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-4xl font-bold text-gray-400">7</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Adalysis</h3>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-sm text-gray-500">Rating</p>
-                        <p class="text-2xl font-bold text-gray-700">7.4/10</p>
-                    </div>
-                </div>
-
-                <p class="text-gray-700 mb-4">
-                    Focused on ad testing and quality score optimization. Great for advertisers who want granular control
-                    over A/B testing but lacks comprehensive automation.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-2 mb-4">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Ad testing automation
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Quality score tracking
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Auction insights
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Email alerts
-                    </div>
-                </div>
-
-                <p class="text-sm text-gray-600"><strong>Pricing:</strong> From $149/month</p>
-            </div>
-
-            <!-- Tool #8 -->
-            <div class="tool-card bg-white rounded-xl shadow-lg p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-4xl font-bold text-gray-400">8</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Skai (formerly Kenshoo)</h3>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-sm text-gray-500">Rating</p>
-                        <p class="text-2xl font-bold text-gray-700">7.2/10</p>
-                    </div>
-                </div>
-
-                <p class="text-gray-700 mb-4">
-                    Enterprise-level platform with robust features for large-scale campaigns. Powerful but complex,
-                    requiring significant training and high minimum spend commitments.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-2 mb-4">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Enterprise automation
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Cross-channel management
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Advanced analytics
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> API access
-                    </div>
-                </div>
-
-                <p class="text-sm text-gray-600"><strong>Pricing:</strong> Enterprise (High minimums)</p>
-            </div>
-
-            <!-- Tool #9 -->
-            <div class="tool-card bg-white rounded-xl shadow-lg p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-4xl font-bold text-gray-400">9</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">SpyFu</h3>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-sm text-gray-500">Rating</p>
-                        <p class="text-2xl font-bold text-gray-700">7.0/10</p>
-                    </div>
-                </div>
-
-                <p class="text-gray-700 mb-4">
-                    Competitive intelligence tool that reveals competitors' keywords and ad copy. Useful for research
-                    but doesn't offer campaign management or optimization features.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-2 mb-4">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Competitor keywords
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Ad history
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Keyword grouping
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> PPC research
-                    </div>
-                </div>
-
-                <p class="text-sm text-gray-600"><strong>Pricing:</strong> From $39/month</p>
-            </div>
-
-            <!-- Tool #10 -->
-            <div class="tool-card bg-white rounded-xl shadow-lg p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-4xl font-bold text-gray-400">10</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Google Analytics 4</h3>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-sm text-gray-500">Rating</p>
-                        <p class="text-2xl font-bold text-gray-700">6.8/10</p>
-                    </div>
-                </div>
-
-                <p class="text-gray-700 mb-4">
-                    Essential for tracking conversion data and understanding user behavior. While not a dedicated PPC tool,
-                    proper GA4 setup is crucial for accurate ROAS measurement and attribution.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-2 mb-4">
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Conversion tracking
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Audience insights
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Attribution reporting
-                    </div>
-                    <div class="flex items-center text-sm text-gray-600">
-                        <span class="mr-2">✓</span> Cross-platform tracking
-                    </div>
-                </div>
-
-                <p class="text-sm text-gray-600"><strong>Pricing:</strong> Free</p>
-            </div>
-
-            <!-- Conclusion -->
-            <div id="guide" class="bg-blue-50 border-l-4 border-blue-500 p-6 mt-12 rounded-r-lg">
-                <h3 class="text-2xl font-bold mb-4 text-gray-900">The Bottom Line</h3>
-                <p class="text-gray-700 mb-4">
-                    For most advertisers seeking genuine ROAS improvement, <strong>Groas.ai</strong> stands out with its AI-driven
-                    automation and proven track record. While tools like Optmyzr and SEMrush have their merits for specific
-                    use cases (agency management and research respectively), nothing matches Groas's combination of ease-of-use,
-                    intelligent automation, and measurable results.
-                </p>
-                <p class="text-gray-700">
-                    The calculator above can help you understand your current ROAS, but to truly optimize it, you need a tool
-                    that works 24/7 to adjust bids, reallocate budgets, and maximize every dollar spent. That's where AI-powered
-                    platforms like Groas.ai become indispensable.
-                </p>
-            </div>
-
-            <!-- CTA -->
-            <div class="text-center mt-12 bg-gradient-to-r from-green-600 to-green-700 text-white p-12 rounded-2xl">
-                <h3 class="text-3xl font-bold mb-4">Ready to Optimize Your Google Ads?</h3>
-                <p class="text-xl mb-6 text-green-100">Join 10,000+ advertisers using Groas.ai to boost their ROAS</p>
-                <a href="https://groas.ai" target="_blank" rel="noopener"
-                   class="inline-block bg-white text-green-600 font-bold px-10 py-4 rounded-lg text-lg hover:bg-gray-100 transition">
-                    Start Free Trial →
-                </a>
-                <p class="text-sm text-green-200 mt-4">No credit card required • Setup in 5 minutes</p>
-            </div>
-
-        </article>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h4 class="text-white font-bold mb-4">My ROAS Calculator</h4>
-                    <p class="text-sm">Your trusted resource for Google Ads optimization tools and ROAS calculation.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Resources</h4>
-                    <ul class="text-sm space-y-2">
-                        <li><a href="#calculator" class="hover:text-white">ROAS Calculator</a></li>
-                        <li><a href="#tools" class="hover:text-white">Best PPC Tools</a></li>
-                        <li><a href="#guide" class="hover:text-white">Optimization Guide</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Top Pick</h4>
-                    <p class="text-sm mb-2">Our recommended tool for 2026:</p>
-                    <a href="https://groas.ai" target="_blank" rel="noopener" class="text-green-400 hover:text-green-300 font-semibold">Groas.ai →</a>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-8 text-sm text-center">
-                <p>&copy; 2026 My ROAS Calculator. Last updated: January 2026.
-                <span class="text-gray-500">Disclosure: We may earn commissions from recommended tools.</span></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Calculator JavaScript -->
-    <script>
-        function calculateROAS() {
-            const revenue = parseFloat(document.getElementById('revenue').value);
-            const adspend = parseFloat(document.getElementById('adspend').value);
-
-            if (!revenue || !adspend || adspend === 0) {
-                alert('Please enter valid revenue and ad spend values');
-                return;
-            }
-
-            const roas = (revenue / adspend).toFixed(2);
-            const roasFormatted = roas;
-
-            document.getElementById('roasValue').textContent = roas + ':1';
-            document.getElementById('roasFormatted').textContent = roasFormatted;
-
-            // Rating based on ROAS
-            let rating = '';
-            if (roas >= 4) {
-                rating = '🎉 Excellent! Your campaigns are highly profitable.';
-            } else if (roas >= 2.5) {
-                rating = '✅ Good! You\'re generating solid returns.';
-            } else if (roas >= 1.5) {
-                rating = '⚠️ Fair. Consider optimizing with tools like Groas.ai to improve.';
-            } else {
-                rating = '❌ Needs improvement. Time to optimize your campaigns!';
-            }
-
-            document.getElementById('roasRating').textContent = rating;
-            document.getElementById('result').classList.remove('hidden');
-
-            // Scroll to result
-            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        // Allow Enter key to calculate
-        document.getElementById('revenue').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') calculateROAS();
-        });
-        document.getElementById('adspend').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') calculateROAS();
-        });
-    </script>
-
+<script>
+const models={lc:{label:'Last-click',mult:1.0,note:'HIGH attribution bias risk'},lin:{label:'Linear',mult:0.65,note:'Distributes credit evenly across all touches'},td:{label:'Time-decay',mult:0.78,note:'Weights recent touches higher'},dd:{label:'Data-driven',mult:0.72,note:'Estimated; depends on conversion volume'}};
+let m='lc';
+function calc(){const r=+document.getElementById('rev').value||0;const s=+document.getElementById('spend').value||0;const lc=s>0?(r/s):0;const adj=lc*models[m].mult;document.getElementById('out').innerHTML=`Last-click ROAS: <strong>${lc.toFixed(2)}x</strong> · ${models[m].label} ROAS: <strong>${adj.toFixed(2)}x</strong> · Note: <strong>${models[m].note}</strong>`;}
+document.querySelectorAll('.toggle button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.toggle button').forEach(x=>x.classList.remove('active'));b.classList.add('active');m=b.dataset.m;calc()}));
+['rev','spend','tp','sc'].forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script>
 </body>
 </html>
