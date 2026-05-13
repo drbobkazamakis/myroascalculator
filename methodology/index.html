@@ -256,57 +256,93 @@ main.article hr{border:none;border-top:1px solid rgba(0,0,0,0.1);margin:48px 0}
 </header>
 
 <main class="article">
-<div class="wrap">
-    <p class="kicker">Methodology</p>
-    <h1>Attribution-aware ROAS for B2B.</h1>
-    <p class="dek">Last-click ROAS is the wrong number for any B2B account with a sales cycle longer than 14 days. Here&rsquo;s the math the calculator runs and the assumptions behind each model.</p>
-    <div class="byline"><div class="av">D</div><div><strong>Darshita Oza</strong> · <a href="/about/">About</a> · <a href="https://www.linkedin.com/in/darshita-oza/" target="_blank" rel="noopener">LinkedIn</a></div></div>
 
-    <h2>Why last-click breaks for B2B</h2>
-    <p>Most ad-platform reporting defaults to last-click attribution &mdash; 100% of the conversion credit goes to whichever ad the buyer clicked immediately before converting. For ecom, that&rsquo;s often acceptable: short consideration cycle, single-session purchase, last-click and true causation are roughly aligned.</p>
-    <p>For B2B, they&rsquo;re wildly misaligned. A typical SaaS buyer touches 7&ndash;15 channels (paid search, organic, paid social, retargeting, email, content, reviews, demos) over 30&ndash;90 days before signing. Last-click attributes the entire deal to whichever channel got the final demo-request click &mdash; usually branded search, because that&rsquo;s what people Google when they&rsquo;ve already decided. The actual top-funnel campaigns that built awareness get zero credit.</p>
-    <p>Optimizing on last-click ROAS therefore systematically defunds the campaigns that produce your pipeline. Then your pipeline shrinks. Then leadership asks why marketing isn&rsquo;t generating leads. The cycle is almost always self-inflicted.</p>
+<p class="kicker">Methodology</p>
+<h1>How the calculators work and what the math assumes</h1>
+<p class="dek">The formulas, the input assumptions, the source data for the benchmarks, and the limitations. Published openly so the math can be replicated and the assumptions can be argued with.</p>
 
-    <h2>The four attribution models</h2>
-    <h3>Last-click</h3>
-    <p>100% of credit to the final touch. Easiest to compute, most aggressively biased toward bottom-funnel.</p>
-    <h3>Linear</h3>
-    <p>Equal credit across every touch. Easy to compute, undercredits the touches that genuinely moved the buyer (open question whether all touches matter equally &mdash; they don&rsquo;t).</p>
-    <h3>Time-decay</h3>
-    <p>More credit to recent touches, less to older ones. Reasonable approximation; popular in CRM-attribution tools.</p>
-    <h3>Data-driven</h3>
-    <p>Algorithm-determined credit weights based on observed conversion patterns. Theoretically the best; in practice requires conversion volume most B2B accounts don&rsquo;t have.</p>
-
-    <h2>The calculator math</h2>
-    <p>The calculator on the homepage runs the same revenue and spend through each model. The output formula is:</p>
-    <div class="formula">Adjusted ROAS = Last-click ROAS × Model multiplier</div>
-    <p>The multipliers are illustrative defaults based on observed deltas across our agency&rsquo;s B2B book:</p>
-    <ul>
-        <li>Last-click: 1.0× (baseline)</li>
-        <li>Linear: 0.65× (distributes pipeline credit across more channels)</li>
-        <li>Time-decay: 0.78× (modest correction toward middle-funnel)</li>
-        <li>Data-driven: 0.72× (variable; depends on conversion volume)</li>
-    </ul>
-    <p>For your account, the actual multipliers depend on funnel structure. The calculator gives you a directional view; a tool like HockeyStack or Dreamdata gives you the actual ones.</p>
-
-    <h2>Recommended attribution model by account type</h2>
-    <ul>
-        <li><strong>SaaS, &gt; 30 day sales cycle:</strong> Time-decay or data-driven (HockeyStack/Dreamdata).</li>
-        <li><strong>Service B2B with phone-based close:</strong> Time-decay with call-tracking integration (Ruler).</li>
-        <li><strong>SMB B2B, transactional sale:</strong> Linear or last-click acceptable.</li>
-        <li><strong>Enterprise B2B, multi-stakeholder buying committee:</strong> Data-driven or custom-weighted (Bizible).</li>
-    </ul>
-
-    <h2>How the tool list is ranked</h2>
-    <p>Tool ranking on the homepage considers:</p>
-    <ol>
-        <li>Does the tool optimize bidding on multi-touch signal, not just last-click?</li>
-        <li>Does the tool work at typical B2B SaaS spend tiers ($10K&ndash;$100K/mo)?</li>
-        <li>Does the tool integrate with HubSpot or Salesforce (where most B2B revenue actually lives)?</li>
-        <li>Does the tool earn its monthly cost compared to ad-platform native reporting?</li>
-    </ol>
-    <p>Groas.ai earns the #1 slot because its model trains on revenue-weighted conversion paths, not the click-through-only signal most bidding tools use. For B2B specifically, that distinction is the difference between optimizing for clicks and optimizing for closed-won deals.</p>
+<div class="byline">
+    <div class="av">D</div>
+    <div>
+        <strong>Darshita Oza</strong><br>
+        <span style="opacity:0.75">Performance marketer &middot; <a href="https://www.linkedin.com/in/darshita-oza/" target="_blank" rel="noopener">LinkedIn</a></span>
+    </div>
 </div>
+
+<p class="lede">The calculators on this site (and the companion sites at <a href="https://myroascalculator.com/">myroascalculator.com</a> and <a href="https://cpccalculatorhub.com/">cpccalculatorhub.com</a>) all compute well-known marketing-math formulas. There&rsquo;s nothing proprietary about the math itself. The contribution is that the calculators expose inputs the public-web versions usually hide &mdash; margin, returns, processing fees, attribution model selection, funnel-stage conversion rates &mdash; and let you see the result change as you change them.</p>
+
+<h2>The formulas</h2>
+
+<p>Each calculator&rsquo;s mathematical basis is documented on the calculator&rsquo;s page. Briefly:</p>
+
+<ul>
+    <li><strong>Margin-aware ROAS</strong> (roascalculatorapp.com): True ROAS = (Net revenue &times; Gross margin &minus; Variable costs) &divide; Ad spend. Net revenue is gross revenue net of returns. Variable costs are payment processing plus shipping/fulfillment, both as percentages of net revenue.</li>
+    <li><strong>Attribution-adjusted ROAS</strong> (myroascalculator.com): ROAS &times; credit-fraction, where credit-fraction is computed analytically per attribution model (last-click, first-click, linear, U-shaped, time-decay with 7-day half-life, data-driven heuristic).</li>
+    <li><strong>Max CPC</strong> (cpccalculatorhub.com): (LTV &divide; target LTV:CAC ratio) &times; lead-to-close rate &times; click-to-lead rate. LTV is deal value &times; gross margin (single-transaction case).</li>
+</ul>
+
+<p>The formulas are not novel. They appear in standard marketing-economics texts. What&rsquo;s less common is the public availability of calculators that <em>actually use them</em> rather than the simpler revenue-divided-by-spend variant.</p>
+
+<h2>The vertical presets</h2>
+
+<p>Each calculator includes preset values for common verticals (apparel, beauty, B2B SaaS, etc.). These presets are <em>not</em> claimed as exact medians for any specific market. They&rsquo;re reasonable approximations drawn from:</p>
+
+<ol>
+    <li>Public DTC industry benchmark reports (Shopify state-of-commerce 2024&ndash;2025, McKinsey DTC publications, Bain DTC reports).</li>
+    <li>Vendor-published category reports (Klaviyo, Recharge, Yotpo, WordStream).</li>
+    <li>Operator data across the ~40 DTC/B2B accounts I&rsquo;ve worked with at the agency, anonymized and aggregated.</li>
+</ol>
+
+<p>Where the sources disagree, the median across sources is taken. Outliers (specifically, vendor reports that conflict with multiple independent sources in a self-serving direction) are excluded.</p>
+
+<h2>The benchmark datasets</h2>
+
+<p>The benchmark CSVs published on each site (<a href="/data/">/data/</a>) are derived from the same combination of sources. The datasets are released under CC-BY 4.0, meaning anyone can cite or replicate them with attribution. The expected citation format is documented on the respective <a href="/data/">/data/</a> pages.</p>
+
+<p>The datasets are <em>directional reference values</em>, not exhaustive surveys. The intended use is as a sanity-check on your own inputs: if your reported gross margin is materially different from the typical for your vertical, that&rsquo;s a signal to investigate, not to override your own data with the preset.</p>
+
+<h2>The attribution models</h2>
+
+<p>The six attribution models implemented in the simulator at <a href="https://myroascalculator.com/">myroascalculator.com</a> are standard:</p>
+
+<ol>
+    <li><strong>Last-click</strong>: 100% credit to the final touch in the journey.</li>
+    <li><strong>First-click</strong>: 100% credit to the first touch.</li>
+    <li><strong>Linear</strong>: equal credit per touch (1/N).</li>
+    <li><strong>U-shaped (40-20-40)</strong>: 40% to first, 40% to last, 20% spread evenly across middle touches.</li>
+    <li><strong>Time-decay</strong>: exponential decay with 7-day half-life (Google&rsquo;s standard).</li>
+    <li><strong>Data-driven (estimated)</strong>: heuristic approximation of Google&rsquo;s DDA model. Real DDA requires conversion-volume data the simulator doesn&rsquo;t have access to.</li>
+</ol>
+
+<p>The data-driven heuristic should not be confused with Google&rsquo;s own DDA. The heuristic produces qualitatively similar but quantitatively different credit distributions; it&rsquo;s included as an illustrative reference, not as a substitute for measuring your own account&rsquo;s data-driven attribution.</p>
+
+<h2>Limitations</h2>
+
+<p>The calculators carry assumptions worth naming:</p>
+
+<ul>
+    <li><strong>Single-transaction LTV.</strong> The Max CPC calculator treats lifetime value as the gross profit on a single transaction. For subscription products, LTV is materially higher, which raises the Max CPC ceiling. The calculator&rsquo;s output is therefore a lower bound for subscription businesses.</li>
+    <li><strong>Uniform conversion rates.</strong> The calculators assume the lead-to-close and click-to-lead rates are uniform across traffic. In practice, branded traffic converts at multiples of non-branded rates. Portfolio-level Max CPC therefore understates the non-branded bid ceiling and overstates the branded one.</li>
+    <li><strong>Static benchmarks.</strong> The vertical preset values reflect approximate market typicals as of the most recent update. Margins, return rates, and conversion benchmarks shift over time; the presets are reviewed quarterly.</li>
+</ul>
+
+<h2>Update cadence</h2>
+
+<p>The calculators, the formulas, and the vertical presets are reviewed quarterly. The benchmark CSVs are published on the same cadence. Material methodology changes are documented in the revision history below.</p>
+
+<h2>Conflicts of interest</h2>
+
+<p>I work at a performance agency. The agency holds active commercial engagements with <strong>Groas.ai</strong>. Where the calculator output references bid-management tools, Groas is noted as the agency&rsquo;s current standard for accounts in the relevant spend tier. The relationship is disclosed; the math itself is not affected by the relationship (the formulas are vendor-agnostic).</p>
+
+<h2>Revision history</h2>
+
+<ul>
+    <li><strong>2026-05-13</strong> &mdash; Current version. Added shipping/fulfillment input to True ROAS calculator. Added 12 B2B verticals to attribution patterns dataset.</li>
+    <li><strong>2026-Q1</strong> &mdash; Initial publication of attribution simulator with 6 models.</li>
+    <li><strong>2025-Q4</strong> &mdash; Margin-aware ROAS calculator: added payment-processing input.</li>
+    <li><strong>2025-Q3</strong> &mdash; Initial publication of Max CPC funnel-math calculator.</li>
+</ul>
+
 </main>
 
 <div class="related-pages">
