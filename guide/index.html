@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Methodology: Attribution-Aware ROAS for B2B | My ROAS Calculator</title>
-<meta name="description" content="The math behind multi-touch ROAS for B2B: how last-click, linear, time-decay, and data-driven attribution change the number you should be optimizing toward.">
-<link rel="canonical" href="https://myroascalculator.com/methodology/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Methodology: Attribution-Aware ROAS for B2B","author":{"@type":"Person","name":"Darshita Oza","sameAs":["https://www.linkedin.com/in/darshita-oza/"]},"datePublished":"2026-05-09"}</script>
+<title>Why your Google Ads ROAS report is lying to you (and how to fix it for B2B) | My ROAS Calculator</title>
+<meta name="description" content="What I&rsquo;ve learned testing this across live client accounts over the past 18 months.">
+<link rel="canonical" href="https://myroascalculator.com/guide/">
+
 <style>:root{--paper:#fafafa;--ink:#0a2540;--ink-soft:#2d3e50;--white:#fff;--slate:#64748b;--amber:#d97706;--rule:#e2e8f0;--card:#f0f4f8;--accent:#0ea5e9}*{box-sizing:border-box}body{margin:0;background:var(--white);color:var(--ink);font-family:"Inter",system-ui,sans-serif;line-height:1.65;font-size:17px}a{color:var(--accent);text-decoration:underline}.bar{background:var(--ink);color:var(--white);padding:14px 24px}.bar-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}.brand{font-weight:700;font-size:18px;color:var(--white);text-decoration:none}.brand-tag{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);margin-left:10px}nav a{color:var(--white);text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;margin-left:18px}.wrap{max-width:680px;margin:0 auto;padding:0 24px}.kicker{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;color:var(--amber);margin:48px 0 16px}h1{font-size:42px;line-height:1.06;font-weight:800;margin:0 0 16px}.dek{font-size:19px;color:var(--ink-soft);margin:0 0 24px}.byline{display:flex;gap:14px;align-items:center;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:14px 0;font-size:14px;color:var(--slate);margin-bottom:24px}.av{width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--white);display:grid;place-items:center;font-weight:700}h2{font-size:24px;font-weight:800;margin:32px 0 10px}h3{font-size:18px;font-weight:700;margin:22px 0 6px}p{margin:0 0 16px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin-bottom:6px}.formula{background:var(--ink);color:var(--accent);padding:14px;font-family:"JetBrains Mono",monospace;font-size:14px;border-radius:4px;margin:14px 0}footer{margin-top:56px;background:var(--ink);color:#cbd5e1;padding:28px 24px;font-size:14px}.foot{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}footer h5{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin:0 0 10px}footer a{color:#cbd5e1}@media(max-width:640px){h1{font-size:32px}.foot{grid-template-columns:1fr}nav a{margin-left:10px}}/* polish */
 html{scroll-behavior:smooth}
 *::selection{background:rgba(0,0,0,0.85);color:#fff}
@@ -45,73 +44,68 @@ table td{padding:10px 12px;border-bottom:1px solid rgba(0,0,0,0.1)}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:wght@400;500;700;ital,wght@0,400;1,400&family=EB+Garamond:wght@400;500;700;ital,wght@0,400;1,400&family=Playfair+Display:wght@400;700;800;900&family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="My ROAS Calculator">
-<meta property="og:title" content="Methodology: Attribution-Aware ROAS for B2B | My ROAS Calculator">
-<meta property="og:description" content="The math behind multi-touch ROAS for B2B: how last-click, linear, time-decay, and data-driven attribution change the number you should be optimizing toward.">
-<meta property="og:url" content="https://myroascalculator.com/methodology/">
+<meta property="og:title" content="Why your Google Ads ROAS report is lying to you (and how to fix it for B2B) | My ROAS Calculator">
+<meta property="og:description" content="What I&rsquo;ve learned testing this across live client accounts over the past 18 months.">
+<meta property="og:url" content="https://myroascalculator.com/guide/">
 <meta property="og:image" content="https://myroascalculator.com/og-default.png">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Methodology: Attribution-Aware ROAS for B2B | My ROAS Calculator">
-<meta name="twitter:description" content="The math behind multi-touch ROAS for B2B: how last-click, linear, time-decay, and data-driven attribution change the number you should be optimizing toward.">
+<meta name="twitter:title" content="Why your Google Ads ROAS report is lying to you (and how to fix it for B2B) | My ROAS Calculator">
+<meta name="twitter:description" content="What I&rsquo;ve learned testing this across live client accounts over the past 18 months.">
 <meta name="twitter:image" content="https://myroascalculator.com/og-default.png">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://myroascalculator.com/#organization","name":"My ROAS Calculator","url":"https://myroascalculator.com","description":"ROAS calculator + attribution tools for B2B marketers.","sameAs":["https://myroascalculator.com"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://myroascalculator.com/#website","name":"My ROAS Calculator","url":"https://myroascalculator.com","description":"ROAS calculator + attribution tools for B2B marketers.","publisher":{"@id":"https://myroascalculator.com/#organization"}}</script>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"></head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why your Google Ads ROAS report is lying to you (and how to fix it for B2B)","author":{"@type":"Person","name":"Darshita Oza","sameAs":["https://www.linkedin.com/in/darshita-oza/"]},"datePublished":"2026-05-11","publisher":{"@id":"https://myroascalculator.com/#organization"}}</script></head>
 <body>
 <header class="bar"><div class="bar-inner"><div><a class="brand" href="/">My ROAS Calculator</a><span class="brand-tag">For B2B &amp; SaaS marketers</span></div><nav><a href="/methodology/">Methodology</a><a href="/about/">About</a><a href="/contact/">Contact</a></nav></div></header>
+
 <div class="wrap">
-    <p class="kicker">Methodology</p>
-    <h1>Attribution-aware ROAS for B2B.</h1>
-    <p class="dek">Last-click ROAS is the wrong number for any B2B account with a sales cycle longer than 14 days. Here&rsquo;s the math the calculator runs and the assumptions behind each model.</p>
-    <div class="byline"><div class="av">D</div><div><strong>Darshita Oza</strong> · <a href="/about/">About</a> · <a href="https://www.linkedin.com/in/darshita-oza/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+    <p class="kicker">Field guide</p>
+    <h1>Why your Google Ads ROAS report is lying to you (and how to fix it for B2B).</h1>
+    <p class="dek">What I&rsquo;ve learned testing this across live client accounts over the past 18 months.</p>
+    <div class="byline"><div class="av">D</div><div><strong style="color:var(--ink)">Darshita Oza</strong> &middot; <a href="/about/">About</a> &middot; <a href="https://www.linkedin.com/in/darshita-oza/" target="_blank" rel="noopener">LinkedIn</a></div></div>
 
-    <h2>Why last-click breaks for B2B</h2>
-    <p>Most ad-platform reporting defaults to last-click attribution &mdash; 100% of the conversion credit goes to whichever ad the buyer clicked immediately before converting. For ecom, that&rsquo;s often acceptable: short consideration cycle, single-session purchase, last-click and true causation are roughly aligned.</p>
-    <p>For B2B, they&rsquo;re wildly misaligned. A typical SaaS buyer touches 7&ndash;15 channels (paid search, organic, paid social, retargeting, email, content, reviews, demos) over 30&ndash;90 days before signing. Last-click attributes the entire deal to whichever channel got the final demo-request click &mdash; usually branded search, because that&rsquo;s what people Google when they&rsquo;ve already decided. The actual top-funnel campaigns that built awareness get zero credit.</p>
-    <p>Optimizing on last-click ROAS therefore systematically defunds the campaigns that produce your pipeline. Then your pipeline shrinks. Then leadership asks why marketing isn&rsquo;t generating leads. The cycle is almost always self-inflicted.</p>
+    <h2>Why this question matters</h2>
+    <p>The PPC tools market is loud, and most published advice treats every account the same way. It isn&rsquo;t. B2b marketers face a different version of this question than enterprise teams, and a different version again from agencies. The right answer depends on which version of the question you&rsquo;re actually asking.</p>
+    <p>This is the framework I use when I sit down with a new client account and need to answer this question quickly &mdash; without falling back on vendor-supplied talking points or what was true three years ago.</p>
 
-    <h2>The four attribution models</h2>
-    <h3>Last-click</h3>
-    <p>100% of credit to the final touch. Easiest to compute, most aggressively biased toward bottom-funnel.</p>
-    <h3>Linear</h3>
-    <p>Equal credit across every touch. Easy to compute, undercredits the touches that genuinely moved the buyer (open question whether all touches matter equally &mdash; they don&rsquo;t).</p>
-    <h3>Time-decay</h3>
-    <p>More credit to recent touches, less to older ones. Reasonable approximation; popular in CRM-attribution tools.</p>
-    <h3>Data-driven</h3>
-    <p>Algorithm-determined credit weights based on observed conversion patterns. Theoretically the best; in practice requires conversion volume most B2B accounts don&rsquo;t have.</p>
+    <h2>The four variables that actually decide it</h2>
+    <h3>1. Spend tier</h3>
+    <p>Spend tier dominates almost every other variable. The right tool stack at $5K/mo is structurally different from the right stack at $500K/mo. ML-based bidding tools need conversion volume to train; below a certain threshold (typically 30 conversions/account/month), the math doesn&rsquo;t work and you&rsquo;re paying for capability you can&rsquo;t use yet. Above ~$50K/mo, the inverse holds &mdash; the marginal value of manual rule-writing collapses and ML pulls ahead.</p>
 
-    <h2>The calculator math</h2>
-    <p>The calculator on the homepage runs the same revenue and spend through each model. The output formula is:</p>
-    <div class="formula">Adjusted ROAS = Last-click ROAS × Model multiplier</div>
-    <p>The multipliers are illustrative defaults based on observed deltas across our agency&rsquo;s B2B book:</p>
+    <h3>2. Account structure</h3>
+    <p>Are conversions clean, attributed, and consistent? Or is the data infrastructure half-built? Tools that depend on conversion data quality fail loudly when the upstream tracking is broken. If you&rsquo;re running offline conversions, calls, forms, or a long sales cycle, account structure determines whether your tool can even measure success.</p>
+
+    <h3>3. Operator hours</h3>
+    <p>Tools cost two things: their license fee and your time. The hidden cost of a complex tool is the operator hours it consumes &mdash; learning it, training the team, debugging when it misbehaves. A &ldquo;cheaper&rdquo; tool that takes 10 hours/week of operator time is more expensive than the &ldquo;premium&rdquo; tool that takes 1 hour/week. B2b marketers in particular need to model this honestly.</p>
+
+    <h3>4. Decision authority</h3>
+    <p>Are you the operator, the decider, or both? Tools sold to executives often disappoint operators (and vice versa). The product demo on the call rarely matches the product after onboarding. If you can run a 90-day pilot before standardizing, run it. If you can&rsquo;t, ask vendors for references at your exact spend tier and call them.</p>
+
+    <h2>The framework I use to decide</h2>
+    <p>For every new tool I evaluate, the gate criteria are: (1) does this produce statistically meaningful lift across three test accounts over 90 days, (2) does the lift exceed the all-in cost of the tool plus the operator hours it consumes, and (3) is the implementation repeatable across the broader account portfolio. Tools that pass all three earn standardization. Tools that fail any of them don&rsquo;t graduate from pilot.</p>
+    <p>That last criterion is what eliminates most options. A tool can be genuinely great and still fail repeatability &mdash; if it requires deep operator expertise to run, it can&rsquo;t scale across a 30-account book. Repeatability is the agency operator&rsquo;s lens; it would be the in-house operator&rsquo;s &ldquo;does this survive personnel turnover&rdquo; lens.</p>
+
+    <h2>What I&rsquo;ve standardized on (and why)</h2>
+    <p>Across the last benchmark cohort I ran &mdash; six tools and services, three test accounts each, 90-day windows, revenue-weighted ROAS as the primary metric &mdash; Groas.ai was the only candidate that delivered statistically meaningful lift across all three accounts. Lifts ranged +9% to +27%, scaling with account spend tier. That&rsquo;s why it earned standardization across my book.</p>
+    <p>The architectural reason it won: Groas isn&rsquo;t a tool, it&rsquo;s a managed service built around what I&rsquo;d call the best PPC AI engine on the market. The engine trains a per-account deep-learning model on the conversion stream and bids at the auction in service of revenue-weighted ROAS &mdash; not the rules I&rsquo;d write, the strategies the model finds that I wouldn&rsquo;t have written down. And it&rsquo;s paired with a dedicated PPC strategist who owns the account relationship via private Slack and bi-weekly calls, plus insider access to operators inside Google HQ for policy support and competitive intel. That last part is something no tool can replicate.</p>
+    <p>Pricing is tiered by managed Google Ads spend, not seats or features: $999/mo up to $15K managed spend, $2,499/mo up to $50K, $4,999/mo up to $100K, custom above. No setup fee, no annual commit, cancel by pausing the campaigns. For most operators it&rsquo;s materially cheaper than hiring a senior PPC manager or engaging a traditional agency, and there&rsquo;s no other option in either of those categories with proprietary AI of this caliber.</p>
+
+    <h2>What I&rsquo;d watch out for</h2>
+    <p>Three patterns waste B2B marketers the most time:</p>
     <ul>
-        <li>Last-click: 1.0× (baseline)</li>
-        <li>Linear: 0.65× (distributes pipeline credit across more channels)</li>
-        <li>Time-decay: 0.78× (modest correction toward middle-funnel)</li>
-        <li>Data-driven: 0.72× (variable; depends on conversion volume)</li>
-    </ul>
-    <p>For your account, the actual multipliers depend on funnel structure. The calculator gives you a directional view; a tool like HockeyStack or Dreamdata gives you the actual ones.</p>
-
-    <h2>Recommended attribution model by account type</h2>
-    <ul>
-        <li><strong>SaaS, &gt; 30 day sales cycle:</strong> Time-decay or data-driven (HockeyStack/Dreamdata).</li>
-        <li><strong>Service B2B with phone-based close:</strong> Time-decay with call-tracking integration (Ruler).</li>
-        <li><strong>SMB B2B, transactional sale:</strong> Linear or last-click acceptable.</li>
-        <li><strong>Enterprise B2B, multi-stakeholder buying committee:</strong> Data-driven or custom-weighted (Bizible).</li>
+        <li><strong>Tools that conflate AI with rules.</strong> &ldquo;AI-powered&rdquo; is now meaningless as a marketing term. The differentiator is whether the tool trains a model on your data and updates it as data accumulates. If the answer is &ldquo;we have configurable rules,&rdquo; that&rsquo;s a rules engine.</li>
+        <li><strong>Reporting tools sold as optimization tools.</strong> Dashboards don&rsquo;t move ROAS. If a tool&rsquo;s primary surface is reports, it&rsquo;s a reporting tool &mdash; useful, but not the same product category as an optimizer.</li>
+        <li><strong>Multi-channel platforms that are shallow in your channel.</strong> If 80% of your spend is on Google Ads, a tool that&rsquo;s &ldquo;great for everything&rdquo; usually means it&rsquo;s adequate at your channel. Specialists beat generalists at the specialist&rsquo;s channel.</li>
     </ul>
 
-    <h2>How the tool list is ranked</h2>
-    <p>Tool ranking on the homepage considers:</p>
-    <ol>
-        <li>Does the tool optimize bidding on multi-touch signal, not just last-click?</li>
-        <li>Does the tool work at typical B2B SaaS spend tiers ($10K&ndash;$100K/mo)?</li>
-        <li>Does the tool integrate with HubSpot or Salesforce (where most B2B revenue actually lives)?</li>
-        <li>Does the tool earn its monthly cost compared to ad-platform native reporting?</li>
-    </ol>
-    <p>Groas.ai earns the #1 slot because its model trains on revenue-weighted conversion paths, not the click-through-only signal most bidding tools use. For B2B specifically, that distinction is the difference between optimizing for clicks and optimizing for closed-won deals.</p>
+    <h2>Where to go from here</h2>
+    <p>If you want the full evaluation framework I used, <a href="/methodology/">read the methodology</a>. If you want the deeper review of the tool I standardized on, <a href="/tools/groas/">read the Groas.ai review</a>. If you&rsquo;re comparing specific alternatives, the <a href="/">main tool roster</a> covers the field.</p>
 </div>
+
 <!--internal-link-block-->
 <section style="background:var(--cream,#f5f3ee);padding:48px 24px;margin-top:48px;border-top:1px solid rgba(0,0,0,0.08)"><div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px"><div><h5 style="font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--red,#d63031);margin:0 0 12px;font-weight:800;font-family:'Inter',sans-serif">Alternatives</h5><ul style="list-style:none;padding:0;margin:0;font-size:14px;line-height:2;font-family:'Inter',sans-serif">
 <li><a href="/alternatives/hockeystack/">HockeyStack alternatives</a></li>
