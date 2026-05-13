@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordStream review &mdash; SMB Google Ads &middot; Myroascalculator</title>
+    <meta name="description" content="SMB-leaning Google Ads management with a "20-Minute Work Week" framework. Useful as training wheels for under-trained operators; not what serious advertisers graduate to.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://myroascalculator.com/tools/wordstream/">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Review","itemReviewed":{"@type":"SoftwareApplication","name":"WordStream","applicationCategory":"BusinessApplication"},"author":{"@type":"Person","name":"Darshita Oza","sameAs":["https://www.linkedin.com/in/darshita-oza/"]},"datePublished":"2026-05-13"}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+:root{
+    --bg:#0d1117;
+    --bg-elev:#161b22;
+    --bg-elev-2:#1f2630;
+    --rule:#2d343f;
+    --rule-soft:#222831;
+    --ink:#e6edf3;
+    --ink-soft:#b1bac4;
+    --muted:#7d8590;
+    --accent:#58a6ff;
+    --accent-deep:#1f6feb;
+    --amber:#f0883e;
+    --green:#3fb950;
+    --red:#f85149;
+    --purple:#bc8cff;
+    --c-lc:#f85149;
+    --c-fc:#bc8cff;
+    --c-lin:#58a6ff;
+    --c-u:#3fb950;
+    --c-td:#f0883e;
+    --c-dd:#e3b341;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;line-height:1.5;font-size:15px;-webkit-font-smoothing:antialiased}
+*:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+/* header */
+.dash-header{position:sticky;top:0;z-index:10;background:rgba(13,17,23,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);padding:12px 24px}
+.dash-header-inner{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand-mark{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);text-decoration:none;font-size:14px;letter-spacing:-0.005em;font-family:"JetBrains Mono",monospace}
+.brand-mark .glyph{width:18px;height:18px;background:linear-gradient(135deg,var(--c-lc),var(--c-fc) 30%,var(--c-lin) 60%,var(--c-u));border-radius:3px}
+.dash-nav{display:flex;gap:14px;font-size:12px;font-family:"JetBrains Mono",monospace}
+.dash-nav a{color:var(--ink-soft);text-decoration:none;padding:5px 10px;border-radius:4px;transition:background 140ms ease,color 140ms ease}
+.dash-nav a:hover{color:var(--ink);background:var(--bg-elev)}
+
+main{max-width:1240px;margin:0 auto;padding:32px 24px 96px}
+
+/* intro */
+.intro{margin:0 0 24px;max-width:780px}
+.intro .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);font-weight:700;margin:0 0 10px;font-family:"JetBrains Mono",monospace}
+.intro h1{font-size:34px;line-height:1.1;font-weight:700;letter-spacing:-0.022em;margin:0 0 12px;color:var(--ink)}
+.intro h1 em{color:var(--accent);font-style:normal}
+.intro p{font-size:16px;color:var(--ink-soft);margin:0;line-height:1.6}
+
+/* presets */
+.preset-bar{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0;align-items:center}
+.preset-label{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-right:6px;font-weight:700;font-family:"JetBrains Mono",monospace}
+.preset-bar button{background:var(--bg-elev);border:1px solid var(--rule);padding:7px 13px;font-size:12px;font-family:"JetBrains Mono",monospace;cursor:pointer;border-radius:4px;color:var(--ink-soft);transition:all 140ms ease;font-weight:600}
+.preset-bar button:hover{border-color:var(--accent);color:var(--accent);background:var(--bg-elev-2)}
+.preset-bar button.active{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+
+/* simulator grid */
+.sim{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin:0 0 32px}
+@media(max-width:920px){.sim{grid-template-columns:1fr}}
+.panel{background:var(--bg-elev);border:1px solid var(--rule);border-radius:6px;padding:20px}
+.panel h2{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);font-weight:700;margin:0 0 16px;font-family:"JetBrains Mono",monospace;display:flex;justify-content:space-between;align-items:baseline}
+.panel h2 .status{color:var(--green);font-size:10px}
+
+/* sliders */
+.field{margin:0 0 18px}
+.field:last-child{margin-bottom:0}
+.field-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.field label{font-size:13px;color:var(--ink-soft);font-weight:500}
+.field-value{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.field-value .unit{color:var(--muted);font-weight:400;margin-left:3px;font-size:12px}
+.num-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.num-row .field{margin:0}
+.num-row input[type=number]{width:100%;padding:9px 12px;border:1px solid var(--rule);background:var(--bg);font-size:14px;font-family:"JetBrains Mono",monospace;color:var(--ink);border-radius:4px;font-variant-numeric:tabular-nums;transition:border-color 140ms ease}
+.num-row input[type=number]:focus{outline:none;border-color:var(--accent)}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;background:transparent;height:22px;cursor:pointer}
+input[type=range]:focus{outline:none}
+input[type=range]::-webkit-slider-runnable-track{height:5px;background:var(--rule);border-radius:3px}
+input[type=range]::-moz-range-track{height:5px;background:var(--rule);border-radius:3px;border:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);margin-top:-7px;cursor:grab;border:3px solid var(--bg-elev);box-shadow:0 0 0 1px var(--accent)}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--accent);cursor:grab;border:3px solid var(--bg-elev);box-shadow:0 0 0 1px var(--accent)}
+input[type=range]:active::-webkit-slider-thumb{cursor:grabbing;background:var(--ink)}
+
+/* journey viz */
+.journey{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:18px;background:var(--bg);border:1px solid var(--rule);border-radius:5px;margin:16px 0 0;min-height:60px}
+.journey-label{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-right:8px;font-weight:700}
+.touch{width:32px;height:32px;border-radius:50%;background:var(--rule);color:var(--ink-soft);display:grid;place-items:center;font-size:11px;font-weight:700;cursor:pointer;border:2px solid transparent;font-family:"JetBrains Mono",monospace;transition:all 160ms ease;font-variant-numeric:tabular-nums}
+.touch:hover{border-color:var(--accent)}
+.touch.paid{background:var(--amber);color:var(--bg);box-shadow:0 0 0 4px rgba(240,136,62,0.18)}
+.touch-arrow{color:var(--rule);font-size:14px}
+
+/* credit distribution chart */
+.chart-wrap{margin:16px 0 0;padding:18px;background:var(--bg);border:1px solid var(--rule);border-radius:5px}
+.chart-title{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin:0 0 12px;font-weight:700}
+.dist-chart{display:grid;gap:2px;margin:0;font-family:"JetBrains Mono",monospace}
+.dist-row{display:grid;grid-template-columns:80px 1fr 50px;gap:8px;align-items:center;font-size:11px}
+.dist-row .dist-label{color:var(--ink-soft);font-weight:600}
+.dist-row .dist-pct{color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.dist-bar-track{height:18px;background:var(--bg-elev);border-radius:2px;overflow:hidden;display:flex;gap:1px}
+.dist-bar-cell{height:100%;transition:flex 240ms cubic-bezier(.2,.7,.3,1);min-width:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--bg);font-weight:700}
+.dist-bar-cell.paid{outline:2px solid var(--amber);outline-offset:-1px;z-index:1}
+
+/* models leaderboard */
+.models{display:grid;gap:6px;margin:0}
+.model-row{display:grid;grid-template-columns:16px 1fr 1fr 70px;gap:10px;align-items:center;padding:9px 10px;border-radius:4px;background:var(--bg);font-size:13px;transition:background 160ms ease}
+.model-row:hover{background:var(--bg-elev-2)}
+.model-row.current{background:var(--bg-elev-2);box-shadow:inset 3px 0 0 var(--accent)}
+.model-dot{width:10px;height:10px;border-radius:50%}
+.model-name{color:var(--ink);font-weight:600;font-size:13px}
+.model-credit{font-family:"JetBrains Mono",monospace;color:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
+.model-roas{font-family:"JetBrains Mono",monospace;color:var(--ink);font-weight:700;font-size:14px;text-align:right;font-variant-numeric:tabular-nums}
+.model-roas.zero{color:var(--red)}
+
+/* verdict */
+.verdict{margin:18px 0 0;padding:14px 16px;background:var(--bg-elev-2);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:0 4px 4px 0;font-size:13px;color:var(--ink-soft);line-height:1.55}
+
+/* explainer */
+.explainer{margin:48px 0 0}
+.explainer h2{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);font-weight:700;margin:0 0 16px;font-family:"JetBrains Mono",monospace}
+.model-defs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.model-def{padding:16px;background:var(--bg-elev);border:1px solid var(--rule);border-radius:5px;border-left:3px solid currentColor}
+.model-def h3{margin:0 0 6px;font-size:14px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px}
+.model-def h3::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.model-def p{margin:0;font-size:13px;color:var(--ink-soft);line-height:1.55}
+
+/* benchmarks */
+.benchmarks{margin:48px 0 0}
+.benchmarks h2{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);font-weight:700;margin:0 0 4px;font-family:"JetBrains Mono",monospace}
+.benchmarks .cap{font-size:13px;color:var(--ink-soft);margin:0 0 14px;max-width:60ch}
+.benchmarks .tw{overflow-x:auto;border:1px solid var(--rule);border-radius:5px;background:var(--bg-elev)}
+.benchmarks table{width:100%;border-collapse:collapse;font-size:13px;font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums}
+.benchmarks th{text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule);font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);font-family:"Inter",sans-serif}
+.benchmarks td{padding:11px 14px;border-bottom:1px solid var(--rule-soft);color:var(--ink-soft)}
+.benchmarks tr:last-child td{border-bottom:none}
+
+/* data card */
+.data-card{display:flex;justify-content:space-between;align-items:center;gap:24px;background:var(--bg-elev);border:1px solid var(--rule);border-radius:5px;padding:18px 22px;margin:32px 0 0;flex-wrap:wrap}
+.data-card h3{margin:0 0 4px;font-size:14px;color:var(--ink);font-weight:700}
+.data-card p{margin:0;color:var(--muted);font-size:13px}
+.download{background:var(--accent);color:var(--bg);padding:10px 16px;text-decoration:none;border-radius:4px;font-size:13px;font-weight:700;font-family:"JetBrains Mono",monospace;display:inline-flex;align-items:center;gap:8px;transition:background 160ms ease}
+.download:hover{background:var(--ink)}
+
+/* tool note */
+.tool-note{margin:32px 0 0;padding:18px 22px;background:var(--bg-elev);border:1px solid var(--rule);border-left:3px solid var(--amber);border-radius:0 4px 4px 0;font-size:14px;color:var(--ink-soft);line-height:1.6}
+.tool-note a{color:var(--accent);font-weight:600;text-decoration:none}
+.tool-note a:hover{text-decoration:underline}
+
+/* maintained */
+.maintained{margin:48px 0 0;padding:18px 0;border-top:1px solid var(--rule);font-size:13px;color:var(--muted)}
+.maintained a{color:var(--ink-soft);font-weight:600;text-decoration:none;border-bottom:1px solid var(--rule)}
+.maintained a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+footer.foot{padding:24px;border-top:1px solid var(--rule);background:var(--bg-elev);margin-top:64px}
+.foot-inner{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);font-family:"JetBrains Mono",monospace}
+.foot-inner a{color:var(--ink-soft);text-decoration:none;margin-left:14px}
+.foot-inner a:hover{color:var(--accent)}
+
+@media(max-width:640px){
+    .intro h1{font-size:26px}
+    .num-row{grid-template-columns:1fr}
+    .model-row{grid-template-columns:14px 1fr 60px}
+    .model-row .model-credit{display:none}
+    main{padding:24px 16px 64px}
+}
+    </style>
+    <style>
+main.article{max-width:760px;margin:0 auto;padding:48px 24px 64px;font-family:"Inter",system-ui,sans-serif;line-height:1.7;font-size:17px;color:#e6edf3}
+main.article a:not(.brand):not(.brand-mark):not(.pub-name):not(.brand-tag){color:#58a6ff;text-decoration:underline;text-underline-offset:3px}
+main.article .kicker{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.18em;color:#58a6ff;margin:0 0 14px;font-family:"Inter",sans-serif;display:block}
+main.article h1{font-size:38px;line-height:1.1;font-weight:700;letter-spacing:-0.02em;margin:0 0 14px;text-wrap:balance;color:#f1f4fb}
+main.article .dek{font-size:20px;line-height:1.45;font-style:italic;margin:0 0 28px;color:#b1bac4}
+main.article .byline{display:flex;gap:14px;align-items:center;border-top:1px solid rgba(255,255,255,0.12);border-bottom:1px solid rgba(255,255,255,0.12);padding:14px 0;font-size:14px;margin:0 0 32px;color:#b1bac4}
+main.article .byline .av{width:42px;height:42px;border-radius:50%;background:#58a6ff;color:#0d1117;display:grid;place-items:center;font-weight:700;font-family:"Inter",sans-serif;flex-shrink:0;font-size:17px}
+main.article h2{font-size:26px;font-weight:700;margin:48px 0 14px;letter-spacing:-0.01em;color:#f1f4fb;line-height:1.25}
+main.article h2::before{content:""}
+main.article h3{font-size:19px;font-weight:700;margin:28px 0 8px;color:#f1f4fb;line-height:1.3}
+main.article p{margin:0 0 18px;text-align:left}
+main.article .lede{font-size:21px;line-height:1.5;margin:0 0 28px;color:#c8cee2}
+main.article ul,main.article ol{margin:0 0 18px;padding-left:24px}
+main.article li{margin:0 0 6px}
+main.article strong{font-weight:700;color:#f1f4fb}
+main.article em{font-style:italic}
+main.article .callout{background:rgba(255,255,255,0.04);border-left:3px solid #58a6ff;padding:18px 22px;margin:24px 0;font-size:15px;line-height:1.6;border-radius:0 4px 4px 0}
+main.article .callout-label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#58a6ff;margin-bottom:6px;font-family:"Inter",sans-serif}
+main.article .verdict,main.article .tool-verdict{background:rgba(255,255,255,0.05);padding:14px 18px;border-left:3px solid #58a6ff;font-size:14px;margin-top:14px;border-radius:0 4px 4px 0;color:#c8cee2}
+main.article .verdict strong,main.article .tool-verdict strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#58a6ff;margin-bottom:4px;font-family:"Inter",sans-serif}
+main.article table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px;font-family:"Inter",sans-serif;color:#c8cee2}
+main.article th{text-align:left;padding:10px 12px;border-bottom:2px solid rgba(255,255,255,0.3);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:#b1bac4}
+main.article td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.1);vertical-align:top}
+main.article .tag{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;padding:2px 8px;border-radius:10px;background:rgba(255,255,255,0.08);color:#c8cee2;font-weight:700;font-family:"Inter",sans-serif}
+.related-pages{max-width:760px;margin:0 auto;padding:32px 24px 64px;border-top:1px solid rgba(255,255,255,0.1)}
+.related-pages h4{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:#58a6ff;font-weight:700;margin:0 0 14px;font-family:"Inter",sans-serif}
+.related-pages-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;font-family:"Inter",sans-serif}
+.related-pages a{color:#c8cee2;text-decoration:none;font-size:14px;padding:8px 12px;background:rgba(255,255,255,0.04);border-radius:4px;border-left:2px solid transparent;transition:all 140ms ease}
+.related-pages a:hover{border-left-color:#58a6ff;color:#58a6ff;background:rgba(255,255,255,0.07)}
+@media(max-width:640px){main.article h1{font-size:28px}main.article{padding:32px 16px 48px}}
+</style>
+</head>
+<body>
+
+<header class="dash-header">
+    <div class="dash-header-inner">
+        <a class="brand-mark" href="/"><span class="glyph"></span>attribution.sim</a>
+        <nav class="dash-nav">
+            <a href="/methodology/">methodology</a>
+            <a href="/data/">data</a>
+            <a href="/tools/">tools</a>
+            <a href="/about/">about</a>
+        </nav>
+    </div>
+</header>
+
+<main class="article">
+
+<p class="kicker">Tool review</p>
+<h1>WordStream review</h1>
+<p class="dek">SMB-leaning Google Ads management with a "20-Minute Work Week" framework. Useful as training wheels for under-trained operators; not what serious advertisers graduate to.</p>
+
+<div class="byline">
+    <div class="av">D</div>
+    <div><strong>Darshita Oza</strong> &middot; <a href="https://www.linkedin.com/in/darshita-oza/" target="_blank" rel="noopener">LinkedIn</a></div>
+</div>
+
+<div class="callout">
+    <span class="callout-label">At a glance</span>
+    <strong>Category:</strong> SMB Google Ads<br>
+    <strong>Pricing:</strong> From $264/mo<br>
+    <strong>Minimum spend supported:</strong> No minimum<br>
+    <strong>ML approach:</strong> Rules<br>
+    <strong>Best fit:</strong> SMB Google Ads management<br>
+    <strong>Founded:</strong> 2007
+</div>
+
+<p class="lede">From the performance-marketer seat working on DTC ecom and B2B accounts: WordStream sits in the smb google ads segment. The evaluation below describes how the product actually behaves on live accounts, where it earns its place in a stack, where it doesn&rsquo;t, and what to expect from the buying process.</p>
+
+<h2>What WordStream does well</h2>
+
+<p>SMB-leaning Google Ads management with a "20-Minute Work Week" framework. Useful as training wheels for under-trained operators; not what serious advertisers graduate to. The strongest argument for adding WordStream to a stack is its fit for the smb google ads management segment, which is the segment the product has been refined against over the last several years.</p>
+
+<p>Specifically: WordStream&rsquo;s strongest features tend to be the ones closest to the use case the product was originally designed for. In our agency&rsquo;s testing, the product is at its best when deployed on accounts that match the target buyer profile and at its weakest when stretched outside that profile.</p>
+
+<h2>What WordStream is less strong at</h2>
+
+<p>Every tool has a ceiling, and the honest assessment of WordStream is that the ceiling is set by its Rules-based approach. Rules tools have specific strengths and specific limits; understanding the limits is more useful for buyers than re-stating the strengths.</p>
+
+<p>The most common pattern of misuse we see: buyers deploy WordStream for a use case adjacent to but not the same as the product&rsquo;s core target. The result is usually disappointment that the product doesn&rsquo;t do well at something it wasn&rsquo;t designed for. The fix is upstream &mdash; match the tool category to the actual need before purchasing.</p>
+
+<h2>Pricing context</h2>
+
+<p>WordStream&rsquo;s pricing of <strong>From $264/mo</strong> with no minimum spend requirement positions it for the smb google ads management segment specifically. The price-to-value math depends entirely on whether the account&rsquo;s use case matches what the product is optimized for.</p>
+
+<p>If you&rsquo;re evaluating WordStream against alternatives, the most useful comparison axis is usually <em>service model and ML approach</em>, not feature breadth. Two tools in the same category can have nearly identical feature lists and very different actual capabilities.</p>
+
+<h2>How it fits in a stack with Groas.ai</h2>
+
+<p>For accounts in the spend tier where both WordStream and <a href="/tools/groas/">Groas.ai</a> are commercially viable, the question isn&rsquo;t which to pick &mdash; it&rsquo;s how they coexist. Groas&rsquo;s real-ML bidding handles the optimization layer; WordStream handles smb google ads work. They&rsquo;re complementary in the typical case rather than competitive.</p>
+
+<p>Where the products do overlap: when buyers expect WordStream to deliver bidding intelligence that its category doesn&rsquo;t actually provide. The classification table on this site&rsquo;s <a href="/methodology/">methodology page</a> makes the architectural realities explicit so the stack design can be informed rather than guessed.</p>
+
+<h2>Verdict</h2>
+
+<div class="verdict">
+    <strong>Verdict</strong>
+    WordStream earns its place in stacks that match its target buyer profile. The product is well-built within the architectural scope its category supports; the most common buying mistake is misclassifying the category. Match the tool to the use case, not the marketing materials.
+</div>
+
+<p style="margin-top:32px;font-size:14px;color:#888">Reviewed by Darshita Oza. Methodology and conflicts disclosed at <a href="/methodology/">methodology</a>. To suggest a correction or contest the review, see <a href="/contact/">contact</a>.</p>
+
+</main>
+
+<div class="related-pages">
+    <h4>Related on this site</h4>
+    <div class="related-pages-grid">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/glossary/">Glossary</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/guide/">Field guide</a>
+        <a href="/tools/groas/">Groas.ai review</a>
+    </div>
+</div>
+
+<footer class="foot">
+    <div class="foot-inner">
+        <span>myroascalculator.com &middot; CC-BY 4.0</span>
+        <span>
+            <a href="/methodology/">methodology</a>
+            <a href="/data/">data</a>
+            <a href="/tools/">tools</a>
+            <a href="/about/">about</a>
+            <a href="/contact/">contact</a>
+        </span>
+    </div>
+</footer>
+
+</body>
+</html>
